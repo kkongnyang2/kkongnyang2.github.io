@@ -1,0 +1,38 @@
+name: Deploy static portal to GitHub Pages & Raspberry Pi
+
+on:
+  push:                     # 수동 push 때마다
+  schedule:                 # 매일 03:00 KST (18:00 UTC)
+    - cron: '0 18 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Prepare deploy dir
+      run: |
+        mkdir deploy
+        rsync -av --exclude='.git/' --exclude='.github/' ./ ./deploy/
+
+    - name: Publish to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir:  deploy          # deploy/ 안의 모든 파일
+
+    - name: Add Pi to known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.PI_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+    - name: Copy to Raspberry Pi
+      uses: appleboy/scp-action@v0.1.3
+      with:
+        host:       ${{ secrets.PI_HOST }}
+        username:   ${{ secrets.PI_USER }}
+        key:        ${{ secrets.PI_SSH_KEY }}
+        source:     "deploy/*"
+        target:     "/var/www/html/"
+        strip_components: 1      # deploy/ 계층 제거
