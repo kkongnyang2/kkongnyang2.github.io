@@ -2,8 +2,6 @@ name: Deploy static portal to GitHub Pages & Raspberry Pi
 
 on:
   push:                     # 수동 push 때마다
-  schedule:                 # 매일 18:00 UTC
-    - cron: '0 18 * * *'
 
 jobs:
   deploy:
