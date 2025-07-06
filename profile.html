@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile · i.kkongnyang2</title>
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ffdce7;
+      --accent-dark: #ffd1df;
+      --text: #1d1d1f;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* HEADER */
+    header {
+      padding: 2rem 4%;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    header a {
+      text-decoration: none;
+      color: var(--text);
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+    header a:hover { opacity: 1; }
+
+    /* MAIN LAYOUT */
+    main {
+      max-width: 960px;
+      margin: 4rem auto;
+      padding: 0 4%;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      column-gap: 3rem;
+      row-gap: 2rem;
+      align-items: start;
+    }
+    /* PHOTO */
+    .photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #f7f7f7;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .photo::after {
+      content: "upload your-photo.jpg";
+      font-size: 0.85rem;
+      color: #aaa;
+      position: absolute;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* BIO SECTION */
+    .bio h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+    .bio p { font-size: 1.05rem; color: #555; margin-bottom: 1.25rem; }
+
+    /* INFO LIST */
+    .info-list { list-style: none; }
+    .info-list li { margin-bottom: 0.6rem; font-size: 0.95rem; }
+    .info-list span { font-weight: 600; margin-right: 0.5rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 4%;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      main { grid-template-columns: 1fr; text-align: center; }
+      .photo { max-width: 60%; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">← Home</a>
+    <h1>Profile</h1>
+  </header>
+
+  <main>
+    <!-- Photo Placeholder -->
+    <div class="photo">
+      <img src="myphoto.jpg" alt="My photo" />
+    </div>
+
+    <!-- Bio Section -->
+    <section class="bio">
+      <h2>안녕하세요!</h2>
+      <p>여기에 짧은 소개글을 적어 주세요. 가나다라마바사아자차카타파하</p>
+
+      <ul class="info-list">
+        <li><span>전공:</span> secret</li>
+        <li><span>관심:</span> secret</li>
+        <li><span>취미:</span> secret</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 kkongnyang2. All rights reserved.
+  </footer>
+</body>
+</html>
