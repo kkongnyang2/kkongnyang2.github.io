@@ -4,50 +4,138 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>i.kkongnyang2</title>
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      /* Strawberry‑milk accent */
+      --accent: #fce0e3;
+      --accent-dark: #ff9fb9;
+      --text: #1d1d1f;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: "Noto Sans KR", sans-serif;
-      background: #f7f7f7;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.5;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
+    }
+    /* HEADER */
+    header {
+      padding: 2rem 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+    /* Hover underline */
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--accent-dark); }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+      gap: 4rem;
+      padding: 4rem 4%;
     }
-    h1 {
+    .intro { max-width: 600px; }
+    .intro h2 {
       font-size: 3rem;
-      margin-bottom: 2rem;
-      color: #222;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
     }
-    .links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .intro p { font-size: 1.125rem; color: #555; }
+
+    /* GIF */
+    .gif-wrapper { max-width: 320px; }
+    .gif-wrapper img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
-    .links a {
-      padding: 1rem 2rem;
-      background: #0068c9;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      transition: background 0.3s;
+
+    /* FOOTER */
+    footer {
+      padding: 1rem 4%;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+      border-top: 1px solid #eee;
     }
-    .links a:hover {
-      background: #0051a8;
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav ul { gap: 1rem; flex-wrap: wrap; }
+      main { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <h1>i.kkongnyang2</h1>
-  <div class="links">
-    <a href="/dev-environment/">개발환경</a>
-    <a href="/server-build/">서버구축</a>
-    <a href="/make-os/">OS개발</a>
-    <a href="/game-cheat/">핵개발</a>
-  </div>
+  <!-- Header & Navigation -->
+  <header>
+    <h1>i.kkongnyang2</h1>
+    <nav>
+      <ul>
+        <li><a href="/dev-environment/">개발환경</a></li>
+        <li><a href="/server-build/">서버구축</a></li>
+        <li><a href="/make-os/">os개발</a></li>
+        <li><a href="/game-cheat/">핵개발</a></li>
+        <li><a href="/next/">next?</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Area -->
+  <main>
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>
+        시스템과 서버, 그리고 저수준 소프트웨어의 세계를 탐험하는 개인 지식
+        저장소입니다. 현재 진행 중인 프로젝트와 학습 기록을 이곳에 정리하고
+        공유합니다.
+      </p>
+    </section>
+
+    <!-- Side GIF (place untitled.gif here) -->
+    <aside class="gif-wrapper">
+      <img src="hyacine3.gif" alt="kkongnyang2 signature animation" />
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 kkongnyang2. All rights reserved.
+  </footer>
 </body>
 </html>
