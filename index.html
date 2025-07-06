@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Strawberry‑milk accent */
+      /* Strawberry-milk accent */
       --accent: #ffdce7;
       --accent-dark: #ffd1df;
       --text: #1d1d1f;
@@ -134,7 +134,20 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav ul { gap: 1rem; flex-wrap: wrap; }
+      /* Header stacks vertically */
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      nav {
+        width: 100%;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
       main { flex-direction: column; text-align: center; }
       .plus-links { margin: 2rem auto; }
     }
