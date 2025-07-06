@@ -44,15 +44,15 @@
       margin: 4rem auto;
       padding: 0 4%;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 240px 1fr;
       column-gap: 3rem;
       row-gap: 2rem;
       align-items: start;
     }
     /* PHOTO */
     .photo {
+      max-width: 240px;
       width: 100%;
-      aspect-ratio: 1 / 1;
       background: #f7f7f7;
       border-radius: 1.5rem;
       overflow: hidden;
@@ -60,15 +60,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
-    .photo::after {
-      content: "upload your-photo.jpg";
-      font-size: 0.85rem;
-      color: #aaa;
-      position: absolute;
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    .photo img { width: 100%; height: 100%; object-fit: cover; }
 
     /* BIO SECTION */
     .bio h2 {
@@ -109,13 +106,14 @@
   <main>
     <!-- Photo Placeholder -->
     <div class="photo">
-      <img src="myphoto.jpg" alt="My photo" />
+      <!-- 사진 파일을 여기에 삽입하세요 -->
+      <img src="myphoto.jpg" alt="my photo" />
     </div>
 
     <!-- Bio Section -->
     <section class="bio">
       <h2>안녕하세요!</h2>
-      <p>여기에 짧은 소개글을 적어 주세요. 가나다라마바사아자차카타파하</p>
+      <p>여기에 짧은 소개글을 적어 주세요. 예) 시스템과 서버를 탐구하며, 저수준 소프트웨어를 즐기는 kkongnyang2입니다.</p>
 
       <ul class="info-list">
         <li><span>전공:</span> secret</li>
