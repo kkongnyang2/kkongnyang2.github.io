@@ -44,14 +44,15 @@
 
     /* MAIN */
     main {
-      width: 100%;
-      max-width: 1200px;
+      width: 90%;          /* 기존 100% → 90%: 화면 넓이 대부분 사용 */
+      max-width: 1600px;   /* 기존 1200px → 1600px: 넓은 모니터에서 여백 감소 */
       margin: 4rem auto;
-      padding: 0 2%; /* 넓은 화면 활용 */
+      padding: 0 1%;       /* 기존 2% → 1%: 내부 좌우 패딩도 절반으로 */
       display: flex;
       flex-direction: column;
       gap: 3rem;
     }
+
     .title {
       font-size: 3rem;
       font-weight: 700;
