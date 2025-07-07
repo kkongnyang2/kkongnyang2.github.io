@@ -24,7 +24,7 @@
       flex-direction:column;
       min-height:100vh;
     }
-    /* HEADER : profile 과 동일한 흐름 */
+    /* HEADER (profile과 동일) */
     header{
       padding:2rem 4%;
       border-bottom:1px solid #eee;
@@ -39,7 +39,15 @@
     header h1{font-size:1.75rem;font-weight:700;margin-top:0.5rem}
 
     /* MAIN */
-    main{max-width:960px;margin:4rem auto;padding:0 4%;display:flex;flex-direction:column;gap:3rem}
+    main{
+      width:100%;                /* 전체 폭 활용 */
+      max-width:1200px;          /* 과도한 확장을 방지 */
+      margin:4rem auto;
+      padding:0 2%;              /* 옆 여백 최소화 */
+      display:flex;
+      flex-direction:column;
+      gap:3rem;
+    }
     .title{
       font-size:3rem;
       font-weight:700;
@@ -56,20 +64,23 @@
     }
 
     /* Image layouts */
+    .gallery-large{
+      width:80%;                 /* 대표 이미지 폭 ↓ & 왼쪽 정렬 */
+      max-width:900px;
+      margin:0;                  /* 왼쪽 기준 */
+    }
     .gallery-large img{
       width:100%;
       border-radius:1rem;
       box-shadow:0 8px 20px rgba(0,0,0,.05);
     }
     .gallery-small{
+      width:80%;                 /* 대표 이미지 라인에 맞춤 */
+      margin:0;                  /* 왼쪽 기준 */
       display:grid;
-      grid-template-columns:repeat(4,1fr); /* 한 줄에 4개 고정 */
-      gap:1rem;
-    }
-    .gallery-small img{
-      width:100%;
-      border-radius:0.75rem;
-      box-shadow:0 4px 12px rgba(0,0,0,.05);
+      grid-template-columns:repeat(4,1fr);
+      gap:1.25rem;
+      justify-items:center;      /* 셀 내부 중앙 */
     }
     .gallery-small img{
       width:100%;
@@ -86,11 +97,15 @@
       font-size:.85rem;
       color:#888;
     }
+
     /* Responsive */
     @media(max-width:768px){
       .title{font-size:2.25rem}
-      .gallery-small{grid-template-columns:repeat(2,1fr);} /* 모바일 2열 */
-      .gallery-small{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+      .gallery-large{width:100%;}
+      .gallery-small{
+        width:100%;
+        grid-template-columns:repeat(2,1fr);
+      }
     }
   </style>
 </head>
