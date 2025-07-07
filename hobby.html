@@ -63,8 +63,13 @@
     }
     .gallery-small{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1.5rem;
+      grid-template-columns:repeat(4,1fr); /* 한 줄에 4개 고정 */
+      gap:1rem;
+    }
+    .gallery-small img{
+      width:100%;
+      border-radius:0.75rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.05);
     }
     .gallery-small img{
       width:100%;
@@ -84,6 +89,7 @@
     /* Responsive */
     @media(max-width:768px){
       .title{font-size:2.25rem}
+      .gallery-small{grid-template-columns:repeat(2,1fr);} /* 모바일 2열 */
       .gallery-small{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
     }
   </style>
