@@ -40,10 +40,10 @@
 
     /* MAIN */
     main{
-      width:100%;                /* 전체 폭 활용 */
-      max-width:1200px;          /* 과도한 확장을 방지 */
+      width:100%;
+      max-width:1200px;
       margin:4rem auto;
-      padding:0 2%;              /* 옆 여백 최소화 */
+      padding:0 4%;   /* 화면 양옆 넉넉하게 사용 */
       display:flex;
       flex-direction:column;
       gap:3rem;
@@ -64,23 +64,25 @@
     }
 
     /* Image layouts */
+    /* 대표 이미지: 왼쪽 라인 맞추되 폭은 60% 정도로 */
     .gallery-large{
-      width:80%;                 /* 대표 이미지 폭 ↓ & 왼쪽 정렬 */
-      max-width:900px;
-      margin:0;                  /* 왼쪽 기준 */
+      width:60%;
+      max-width:720px;
+      margin-left:0;   /* 왼쪽 정렬 */
+      margin-right:auto;
     }
     .gallery-large img{
       width:100%;
       border-radius:1rem;
       box-shadow:0 8px 20px rgba(0,0,0,.05);
     }
+    /* 두 번째·세 번째 섹션: 전체 폭 중앙 레이아웃 */
     .gallery-small{
-      width:80%;                 /* 대표 이미지 라인에 맞춤 */
-      margin:0;                  /* 왼쪽 기준 */
+      width:100%;
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:1.25rem;
-      justify-items:center;      /* 셀 내부 중앙 */
+      justify-items:center; /* 이미지 중앙 */
     }
     .gallery-small img{
       width:100%;
@@ -99,13 +101,13 @@
     }
 
     /* Responsive */
+    @media(max-width:1024px){
+      .gallery-small{grid-template-columns:repeat(3,1fr);} /* 태블릿 3열 */
+    }
     @media(max-width:768px){
       .title{font-size:2.25rem}
       .gallery-large{width:100%;}
-      .gallery-small{
-        width:100%;
-        grid-template-columns:repeat(2,1fr);
-      }
+      .gallery-small{grid-template-columns:repeat(2,1fr);} /* 모바일 2열 */
     }
   </style>
 </head>
