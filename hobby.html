@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hobby · i.kkongnyang2</title>
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ffd1df;  /* 딸기우유 */
+      --accent-light: #ffe8f0;
+      --text: #1d1d1f;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      background:#ffffff;
+      line-height:1.6;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+    /* HEADER (anchor 위, h1 아래) */
+    header{
+      padding:2rem 4%;
+      border-bottom:1px solid #eee;
+    }
+    header a{
+      text-decoration:none;
+      color:var(--text);
+      opacity:.7;
+      font-size:.9rem;
+    }
+    header a:hover{opacity:1}
+    header h1{font-size:1.75rem;font-weight:700;margin-top:0.5rem}
+
+    /* MAIN */
+    main{max-width:960px;margin:4rem auto;padding:0 4%;display:flex;flex-direction:column;gap:3rem}
+    .title{
+      font-size:3rem;
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:1rem;
+      text-align:left;
+    }
+    section h3{
+      font-size:1rem;
+      font-weight:600;
+      margin-bottom:1.25rem;
+      color:var(--text);
+      text-align:left;
+    }
+
+    /* Image layouts */
+    .gallery-large img{
+      width:100%;
+      border-radius:1rem;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+    }
+    .gallery-small{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:1rem;
+    }
+    .gallery-small img{
+      width:100%;
+      border-radius:0.75rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.05);
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:auto;
+      padding:2rem 4%;
+      border-top:1px solid #eee;
+      text-align:center;
+      font-size:.85rem;
+      color:#888;
+    }
+    /* Responsive */
+    @media(max-width:768px){
+      .title{font-size:2.25rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">← Home</a>
+    <h1>Hobby</h1>
+  </header>
+
+  <main>
+    <h2 class="title">overwatch</h2>
+
+    <!-- Section 1: 대표 이미지 -->
+    <section>
+      <h3>대표 이미지</h3>
+      <div class="gallery-large">
+        <!-- image1 placeholder -->
+        <!-- Example: <img src="image1.jpg" alt="대표 이미지" /> -->
+      </div>
+    </section>
+
+    <!-- Section 2: 현재 계정들 -->
+    <section>
+      <h3>현재 계정들</h3>
+      <div class="gallery-small">
+        <!-- image2~image5 placeholders -->
+        <img src="image2.jpg" alt="계정 1" />
+        <img src="image3.jpg" alt="계정 2" />
+        <img src="image4.jpg" alt="계정 3" />
+        <!-- <img src="image5.jpg" alt="계정 4" /> -->
+      </div>
+    </section>
+
+    <!-- Section 3: 오버워치 기록 -->
+    <section>
+      <h3>오버워치 기록</h3>
+      <div class="gallery-small">
+        <!-- image6~image9 placeholders -->
+        <!-- <img src="image6.jpg" alt="기록 1" /> -->
+        <!-- <img src="image7.jpg" alt="기록 2" /> -->
+        <!-- <img src="image8.jpg" alt="기록 3" /> -->
+        <!-- <img src="image9.jpg" alt="기록 4" /> -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 kkongnyang2. All rights reserved.
+  </footer>
+</body>
+</html>
