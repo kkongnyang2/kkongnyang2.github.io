@@ -9,8 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #ffd1df;  /* 딸기우유 */
-      --accent-light: #ffe8f0;
+      /* 통일된 파스텔 팔레트 (profile 기준) */
+      --accent: #ffdce7;      /* 메인 딸기우유 */
+      --accent-dark: #ffd1df; /* 호버/포커스 */
       --text: #1d1d1f;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,7 +24,7 @@
       flex-direction:column;
       min-height:100vh;
     }
-    /* HEADER (anchor 위, h1 아래) */
+    /* HEADER : profile 과 동일한 흐름 */
     header{
       padding:2rem 4%;
       border-bottom:1px solid #eee;
@@ -62,8 +63,8 @@
     }
     .gallery-small{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-      gap:1rem;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1.5rem;
     }
     .gallery-small img{
       width:100%;
@@ -83,6 +84,7 @@
     /* Responsive */
     @media(max-width:768px){
       .title{font-size:2.25rem}
+      .gallery-small{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
     }
   </style>
 </head>
@@ -100,7 +102,7 @@
       <h3>대표 이미지</h3>
       <div class="gallery-large">
         <!-- image1 placeholder -->
-        <!-- Example: <img src="image1.jpg" alt="대표 이미지" /> -->
+        <img src="image2.png" alt="대표 이미지" />
       </div>
     </section>
 
@@ -111,8 +113,8 @@
         <!-- image2~image5 placeholders -->
         <img src="image2.png" alt="계정 1" />
         <img src="image3.png" alt="계정 2" />
-        <img src="image4.png" alt="계정 3" />
-        <!-- <img src="image5.jpg" alt="계정 4" /> -->
+        <img src="image2.png" alt="계정 3" />
+        <img src="image3.png" alt="계정 4" />
       </div>
     </section>
 
@@ -121,10 +123,10 @@
       <h3>오버워치 기록</h3>
       <div class="gallery-small">
         <!-- image6~image9 placeholders -->
-        <!-- <img src="image6.jpg" alt="기록 1" /> -->
-        <!-- <img src="image7.jpg" alt="기록 2" /> -->
-        <!-- <img src="image8.jpg" alt="기록 3" /> -->
-        <!-- <img src="image9.jpg" alt="기록 4" /> -->
+        <img src="image2.png" alt="기록 1" />
+        <img src="image3.png" alt="기록 2" />
+        <img src="image4.png" alt="기록 3" />
+        <img src="image2.png" alt="기록 4" />
       </div>
     </section>
   </main>
